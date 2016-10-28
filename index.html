@@ -18,26 +18,19 @@ var url = "data/players.txt";
 
 xmlhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
-        var myArr = JSON.parse(this.responseText);
-        myFunction(myArr);
+        var nmyArr = JSON.parse(this.responseText);
+        myFunction(nmyArr);
     }
 };
 xmlhttp.open("GET", url, true);
 xmlhttp.send();   
       
 function myFunction(narr) {
-//    var out = "";
-var player ="";
-    var i;
-// var row =1
-//     var col =17
-
-
- for (var i = 0; i < narr.length; i++){
-player += narr[i].name;}
-     //for (var c=0;c<col;c++) {
-document.write('<th colspan="2">player</th>')  
-         
+  var player ="";
+  var i;
+  for (var i = 0; i < narr.length; i++){
+    player += narr[i].name;}
+  document.write('<th colspan="2">player</th>')           
 }     
     </script>
   </tr>
