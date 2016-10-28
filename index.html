@@ -2,7 +2,27 @@
 <html>
 <body>
 
-<div id="id01"></div>
+    <table>
+
+<table style="width:100%">
+
+<caption id="id01"></caption>
+  <colgroup>
+   </colgroup>
+
+ <tr>
+    <th id="id02" colspan="9"></th>
+    <script> 
+     var row =1
+     var col =5
+     for (var c=0;c<col;c++) {
+      document.write('<th colspan="2">PlayerName</th>')  
+      }
+    </script>
+  </tr>
+
+</table>
+
 
 <script>
 var xmlhttp = new XMLHttpRequest();
@@ -29,10 +49,13 @@ xmlhttp.send();
 
 function myFunction(arr) {
     var out = "";
+var out1 = "";
     var i;
     var j= 2;
 out += arr[j].display;
+out1 += arr[1].display;
 document.getElementById("id01").innerHTML = out;
+document.getElementById("id02").innerHTML = out1;
 
 }    
     
