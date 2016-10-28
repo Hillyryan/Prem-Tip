@@ -14,7 +14,7 @@
     <th id="id02" colspan="9"></th>
    <script> 
 var xmlhttp = new XMLHttpRequest();
-var url = "data/players.txt";
+var url = "data/fixtures.txt";
 
 xmlhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
@@ -27,12 +27,12 @@ xmlhttp.send();
      
  
 
-function myFunction(narr) {
+function myFunction(arr) {
     var row = document.getElementById("myRow");
     var player ="";
   var i;
   for (var i = 0; 2; i++){
-    player += narr[i].name;
+    player += arr[i].match;
   var x = row.insertCell(-1);
     x.innerHTML = "player";
   }
