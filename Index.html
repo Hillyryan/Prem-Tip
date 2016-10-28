@@ -1,21 +1,95 @@
 <!DOCTYPE html>
 <html>
-<body>
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/0.71/jquery.csv-0.71.min.js"></script>
+    <script type="text/javascript">  
+    $(document).ready(function() {
 
-<div id="id01"></div>
-<script>
-function myFunction(arr) {
-    var out = "";
-    var i;
-    for(i = 0; i<arr.length; i++) {
-        out += '<a href="' + arr[i].url + '">' +
-        arr[i].display + '</a><br>';
+    // The event listener for the file upload
+    document.getElementById('txtFileUpload').addEventListener('change', upload, false);
+
+    // Method that checks that the browser supports the HTML5 File API
+    function browserSupportFileUpload() {
+        var isCompatible = false;
+        if (window.File && window.FileReader && window.FileList && window.Blob) {
+        isCompatible = true;
+        }
+        return isCompatible;
     }
-    document.getElementById("id01").innerHTML = out;
-}
-</script>
 
-<script src="js/myTutorials.js"></script>
+    // Method that reads and processes the selected file
+    function upload(evt) {
+        if (!browserSupportFileUpload()) {
+            alert('The File APIs are not fully supported in this browser!');
+            } else {
+                var data = null;
+                var file = evt.target.files[0];
+                var reader = new FileReader();
+                reader.readAsText(file);
+                reader.onload = function(event) {
+                    var csvData = event.target.result;
+                    data = $.csv.toArrays(csvData);
+                    if (data && data.length > 0) {
+                    alert('Imported -' + data + '- rows successfully!');
+                    str = csvData;
+                    var res = str.split(",", 1);
+                    alert(res);
+                    
+var myArray = SplitTheString(csvData);
+myArray[1]; // charlie
+alert(myArray[4]);
+
+} else {
+                        alert('No data to import!');
+                    }
+                };
+                reader.onerror = function() {
+                    alert('Unable to read ' + file.fileName);
+                };
+            }
+        }
+    });
+</script>
+    </head>
+<body>
+    <div id="dvImportSegments" class="fileupload ">
+    <fieldset>
+        <legend>Upload your CSV File</legend>
+        <input type="file" name="File Upload" id="txtFileUpload" accept=".csv" />
+    </fieldset>
+    </div>
+
+<p>Click the button to display the array values after the split.</p>
+
+<button onclick="myFunction()">Try it</button>
+
+<p id="demo"></p>
+
+<script>
+function myFunction() {
+    var str = "How,are,you,doing,today?";
+    var res = str.split(" ", 1);
+    document.getElementById("demo").innerHTML = res;
+}
+
+
+
+ function SplitTheString(CommaSepStr) {
+       var ResultArray = null; 
+
+        if (CommaSepStr!= null) {
+            var SplitChars = ',';
+            if (CommaSepStr.indexOf(SplitChars) >= 0) {
+                ResultArray = CommaSepStr.split(SplitChars);
+
+            }
+        }
+       return ResultArray ;
+    }
+
+</script>
 
 </body>
 </html>
+
