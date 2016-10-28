@@ -13,15 +13,6 @@
  <tr>
     <th id="id02" colspan="9"></th>
    <script> 
-     var row =1
-     var col =17
-     for (var c=0;c<col;c++) {
-      document.write('<th colspan="2">PlayerName</th>')  
-      }
-    </script>
-   
-   
-    <script> 
 var xmlhttp = new XMLHttpRequest();
 var url = "data/players.txt";
 
@@ -32,16 +23,23 @@ xmlhttp.onreadystatechange = function() {
     }
 };
 xmlhttp.open("GET", url, true);
-xmlhttp.send();   
-      
+xmlhttp.send();       
+     
 function myFunction(narr) {
   var player ="";
   var i;
   for (var i = 0; i < narr.length; i++){
-    player += narr[i].name;}
-  document.write('<th colspan="2">player</th>')           
-}     
+    player += narr[i].name;}      
+}              
+     var row =1
+     var col =17
+     for (var c=0;c<col;c++) {
+      document.write('<th colspan="2">PlayerName</th>')  
+      }
     </script>
+      
+
+
   </tr>
 
 </table>
