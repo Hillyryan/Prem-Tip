@@ -1,95 +1,78 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
-<head>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/0.71/jquery.csv-0.71.min.js"></script>
-    <script type="text/javascript">  
-    $(document).ready(function() {
+  
+	
+<head>	
+	
+	  <link rel="stylesheet" type="text/css" href="data/jquery.dataTables.css">
+</head>
+   
 
-    // The event listener for the file upload
-    document.getElementById('txtFileUpload').addEventListener('change', upload, false);
+<script type="text/javascript" charset="utf8" src="js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" charset="utf8" src="js/jquery.dataTables.min.js"></script>
+<script src="js/jput.min.js"></script>     
 
-    // Method that checks that the browser supports the HTML5 File API
-    function browserSupportFileUpload() {
-        var isCompatible = false;
-        if (window.File && window.FileReader && window.FileList && window.Blob) {
-        isCompatible = true;
+<table id="example" class="display" cellspacing="0" width="100%">
+        <thead>
+            <tr>
+                <th>Match</th>
+                <th>Venue</th>
+                <th>Time</th>
+                <th>Date</th>
+
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                 <th>Match</th>
+                <th>Venue</th>
+                <th>Time</th>
+                <th>Date</th>
+            </tr>
+        </tfoot>
+    </table>
+
+<script>  	
+
+	$(document).ready(function() {
+      $('#example').DataTable( {
+        "ajax": "data/newarrays.txt",
+
+        "columnDefs": [
+            { "visible": false, "targets": 3 }
+        ],
+        "order": [[ 3, 'asc' ]],
+        "displayLength": 25,
+        "drawCallback": function ( settings ) {
+            var api = this.api();
+            var rows = api.rows( {page:'current'} ).nodes();
+            var last=null;
+ 
+            api.column(3, {page:'current'} ).data().each( function ( group, i ) {
+                if ( last !== group ) {
+                    $(rows).eq( i ).before(
+                        '<tr class="group"><td colspan="3">'+group+'</td></tr>'
+                    );
+ 
+                    last = group;
+                }
+            } );
         }
-        return isCompatible;
-    }
-
-    // Method that reads and processes the selected file
-    function upload(evt) {
-        if (!browserSupportFileUpload()) {
-            alert('The File APIs are not fully supported in this browser!');
-            } else {
-                var data = null;
-                var file = evt.target.files[0];
-                var reader = new FileReader();
-                reader.readAsText(file);
-                reader.onload = function(event) {
-                    var csvData = event.target.result;
-                    data = $.csv.toArrays(csvData);
-                    if (data && data.length > 0) {
-                    alert('Imported -' + data + '- rows successfully!');
-                    str = csvData;
-                    var res = str.split(",", 1);
-                    alert(res);
-                    
-var myArray = SplitTheString(csvData);
-myArray[1]; // charlie
-alert(myArray[4]);
-
-} else {
-                        alert('No data to import!');
-                    }
-                };
-                reader.onerror = function() {
-                    alert('Unable to read ' + file.fileName);
-                };
-            }
+    } );
+ 
+    // Order by the grouping
+    $('#example tbody').on( 'click', 'tr.group', function () {
+        var currentOrder = table.order()[0];
+        if ( currentOrder[0] === 2 && currentOrder[1] === 'asc' ) {
+            table.order( [ 2, 'desc' ] ).draw();
         }
-    });
-</script>
-    </head>
-<body>
-    <div id="dvImportSegments" class="fileupload ">
-    <fieldset>
-        <legend>Upload your CSV File</legend>
-        <input type="file" name="File Upload" id="txtFileUpload" accept=".csv" />
-    </fieldset>
-    </div>
-
-<p>Click the button to display the array values after the split.</p>
-
-<button onclick="myFunction()">Try it</button>
-
-<p id="demo"></p>
-
-<script>
-function myFunction() {
-    var str = "How,are,you,doing,today?";
-    var res = str.split(" ", 1);
-    document.getElementById("demo").innerHTML = res;
-}
-
-
-
- function SplitTheString(CommaSepStr) {
-       var ResultArray = null; 
-
-        if (CommaSepStr!= null) {
-            var SplitChars = ',';
-            if (CommaSepStr.indexOf(SplitChars) >= 0) {
-                ResultArray = CommaSepStr.split(SplitChars);
-
-            }
+        else {
+            table.order( [ 2, 'asc' ] ).draw();
         }
-       return ResultArray ;
-    }
-
-</script>
-
-</body>
+    } );
+} );
+	
+	
+	
+	</script> 
 </html>
-
