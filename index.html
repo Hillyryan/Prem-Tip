@@ -11,13 +11,32 @@
    </colgroup>
     
  <tr>
-    <th id="id02" colspan="9"></th>
+    <th id="Fixtures" colspan="9"></th>
     <script> 
-     var row =1
-     var col =5
-     for (var c=0;c<col;c++) {
-      document.write('<th colspan="2">PlayerName</th>')  
-      }
+var xmlhttp = new XMLHttpRequest();
+var url = "data/players.txt";
+
+xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        var myArr = JSON.parse(this.responseText);
+        myFunction(myArr);
+    }
+};
+xmlhttp.open("GET", url, true);
+xmlhttp.send();   
+      
+function myFunction(narr) {
+//    var out = "";
+    var i;
+// var row =1
+//     var col =17
+
+player += narr[col].name;
+ for (var i = 0; i < narr.length; i++){
+     //for (var c=0;c<col;c++) {
+document.write('<th colspan="2">player</th>')   
+}          
+      
     </script>
   </tr>
 
