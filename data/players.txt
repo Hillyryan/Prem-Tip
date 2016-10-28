@@ -1,28 +1,26 @@
  [
     {
-      "name": "Ryan Hill",
+      "name": "Ryan Hill"
     },
     {
-      "name": "Luke",
+      "name": "Luke"
     },
     {
-      "name": "Hafiz",
+      "name": "Hafiz"
     },
     {
-      "name": "Ryan Hill",
+      "name": "Ryan Hill"
     },
     {
-      "name": "Ryan Hill",
+      "name": "Ryan Hill"
     },
     {
-      "name": "Ryan Hill",
+      "name": "Ryan Hill"
     },
     {
-      "name": "Ryan Hill",
+      "name": "Ryan Hill"
     },
     {
-      "name": "Ryan Hill",
+      "name": "Ryan Hill"
     }
 ]
-
-
