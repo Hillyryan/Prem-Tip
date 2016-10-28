@@ -10,7 +10,7 @@
   <colgroup>
    </colgroup>
     
- <tr>
+ <tr id="myRow">
     <th id="id02" colspan="9"></th>
    <script> 
 var xmlhttp = new XMLHttpRequest();
@@ -18,26 +18,29 @@ var url = "data/players.txt";
 
 xmlhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
-        var nmyArr = JSON.parse(this.responseText);
-        myFunction(nmyArr);
+        var myArr = JSON.parse(this.responseText);
+        myFunction(myArr);
     }
 };
 xmlhttp.open("GET", url, true);
 xmlhttp.send();       
      
+ 
+
 function myFunction(narr) {
-  var player ="";
+    var row = document.getElementById("myRow");
+    var player ="";
   var i;
   for (var i = 0; i < narr.length; i++){
-    player += narr[i].name;}      
- document.getElementById("id04").innerHTML = out1; 
-}              
-     var row =1
-     var col =5
-     for (var c=0;c<col;c++) {
-      document.write('<th id="id04" colspan="2"></th>')  
-      }
-    </script>
+    player += narr[i].name;
+  var x = row.insertCell(-1);
+    x.innerHTML = player;
+  }
+}
+
+   
+   
+   </script>
       
 
 
