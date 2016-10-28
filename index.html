@@ -17,16 +17,26 @@ xmlhttp.onreadystatechange = function() {
 xmlhttp.open("GET", url, true);
 xmlhttp.send();
 
+//function myFunction(arr) {
+//    var out = "";
+//    var i;
+//    for(i = 0; i < arr.length; i++) {
+//        out += '<a href="' + arr[i].url + '">' +
+//        arr[i].display + '</a><br>';
+//    }
+//    document.getElementById("id01").innerHTML = out;
+//}
+
 function myFunction(arr) {
     var out = "";
     var i;
-    for(i = 0; i < arr.length; i++) {
-        out += '<a href="' + arr[i].url + '">' +
-        arr[i].display + '</a><br>';
-    }
-    document.getElementById("id01").innerHTML = out;
-}
-</script>
+    var j= 2;
+out += arr[j].display;
+document.getElementById("id01").innerHTML = out;
+
+}    
+    
+    </script>
 
 </body>
 </html>
