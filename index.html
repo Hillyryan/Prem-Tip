@@ -17,32 +17,7 @@
 </table>
   
   
-   <script> 
-var xmlhttp = new XMLHttpRequest();
-var url = "data/fixtures.txt";
 
-xmlhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-        var myArr = JSON.parse(this.responseText);
-        myFunction(myArr);
-    }
-};
-xmlhttp.open("GET", url, true);
-xmlhttp.send();       
-     
- 
-
-function myFunction(arr) {
-    var row = document.getElementById("myRow");
-    var player ="";
-  var i;
-  for (var i = 0; 2; i++){
-    player += arr[i].match;
-  var x = row.insertCell(-1);
-    x.innerHTML = "player";
-  }
-}
-     </script>
 
 <script>
 var xmlhttp = new XMLHttpRequest();
@@ -75,6 +50,8 @@ var out1 = "";
     var MW = "Matchweek1";
 out += arr[j].venue;
 out1 += arr[0].match;
+  
+ alert (arr[j].venue);
 //document.getElementById("id01").innerHTML = out;
 document.getElementById("id02").innerHTML = out1;
 document.getElementById("demo").innerHTML = MW;
