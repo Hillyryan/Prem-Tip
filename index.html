@@ -48,34 +48,28 @@ var out1 = "";
     var i;
     var j= 1;
     var MW = "Matchweek1";
-out += arr[j].venue;
-out1 += arr[0].match;
+//out += arr[j].venue;
+//out1 += arr[0].match;
   
 //// alert (arr[j].match);
 
   //document.getElementById("id01").innerHTML = out;
 //document.getElementById("id02").innerHTML = out1;
-//document.getElementById("demo").innerHTML = MW;
+document.getElementById("demo").innerHTML = MW;
 //}    
 
-  
-   var table = document.createElement('table'), tr, td, row, cell;
-  
-  for(row = 0; row < arr.length; row++) {
-    new += arr[0].match;
-  //for (row = 0; row < 5; row++) {
-    tr = document.createElement('tr');
-  //for(cell = 0; cell < arr.length; cell++) { 
-  //for (cell = 0; cell < 5; cell++) {
+var ir;
+var table = document.createElement('table'), tr, td, row, cell;
+new += arr[ir].match;
+for(ir = 0; ir < arr.length; ir++) {
+        tr = document.createElement('tr');
         td = document.createElement('td');
         tr.appendChild(td);
         td.innerHTML = new;
-    }
-    table.appendChild(tr);
-}
+        table.appendChild(tr);
+   }
 document.getElementById('container').appendChild(table); 
-  
-  
+}
   
 </script>     
 
