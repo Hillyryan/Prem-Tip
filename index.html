@@ -48,7 +48,7 @@ var out1 = "";
     //var i;
     var i= 0;
     var MW = "Matchweek1";
-out += arr[i].match;
+
 //out1 += arr[0].match;
   
 //// alert (arr[j].match);
@@ -60,6 +60,7 @@ document.getElementById("demo").innerHTML = MW;
 
 var table = document.createElement('table'), tr, td, row, cell;
 for(i = 0; i < arr.length; i++) {
+        out += arr[i].match;
         tr = document.createElement('tr');
         td = document.createElement('td');
         tr.appendChild(td);
