@@ -16,7 +16,7 @@
 
 </table>
   
-  
+ <div id="container"></div> 
 
 
 <script>
@@ -51,14 +51,33 @@ var out1 = "";
 out += arr[j].venue;
 out1 += arr[0].match;
   
- alert (arr[j].venue);
-//document.getElementById("id01").innerHTML = out;
+// alert (arr[j].match);
+
+  //document.getElementById("id01").innerHTML = out;
 document.getElementById("id02").innerHTML = out1;
 document.getElementById("demo").innerHTML = MW;
 }    
-    
+
+  
+   var table = document.createElement('table'), tr, td, row, cell;
+for (row = 0; row < 5; row++) {
+    tr = document.createElement('tr');
+    for (cell = 0; cell < 5; cell++) {
+        td = document.createElement('td');
+        tr.appendChild(td);
+        td.innerHTML = "test";
+    }
+    table.appendChild(tr);
+}
+document.getElementById('container').appendChild(table); 
+  
+  
+  
 </script>     
-        
+
+
+  
+  
         
 </body>
 </html>
