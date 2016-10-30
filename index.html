@@ -61,12 +61,12 @@ document.getElementById("demo").innerHTML = MW;
 //var table = document.createElement('table'), tr, td, row, cell;
 var table = document.createElement('table'), tr, td;  
 for(i = 0; i < arr.length; i++) {
-        out += arr[i].match;
+        //out += arr[i].match;
   alert (arr[i].match);
         tr = document.createElement('tr');
         td = document.createElement('td');
         tr.appendChild(td);
-        td.innerHTML = out;
+        td.innerHTML = (arr[i].match);
         table.appendChild(tr);
    }
 document.getElementById('container').appendChild(table); 
