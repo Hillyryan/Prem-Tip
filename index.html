@@ -9,15 +9,20 @@
 <caption id="demo"></caption>
   <colgroup>
    </colgroup>
-    
- <tr id="contains"></tr>
+ 
+  <tr>
+    <th colspan="9">Fixtures</th>
+    <th id="contains" colspan="2"></th>
+  </tr>
+  
 
 </table>
   
  
 <script>
 var xmlhttp = new XMLHttpRequest();
-var url = "data/fixtures.txt";
+//var url = "data/fixtures.txt";
+var url = "data/players.txt";  
 
 xmlhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
@@ -53,7 +58,7 @@ for(i = 0; i < arr.length; i++) {
         //tr = document.createElement('tr');
         td = document.createElement('td');
         //tr.appendChild(td);
-        td.innerHTML = (arr[i].match);
+        td.innerHTML = (arr[i].name);
         //table.appendChild(tr);
         myrow.appendChild(td);
   }
