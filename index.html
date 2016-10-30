@@ -10,13 +10,13 @@
   <colgroup>
    </colgroup>
     
- <tr id="myRow">
-    <th id="td" colspan="9"></th>
+ <tr id="contains">
+    //<th id="td" colspan="9"></th>
   </tr>
 
 </table>
   
- <div id="container"></div> 
+ //<div id="container"></div> 
 
 
 <script>
@@ -48,18 +48,21 @@ var out1 = "";
 document.getElementById("demo").innerHTML = MW;
 //}    
 
-//var table = document.createElement('table'), tr, td, row, cell;
-var table = document.createElement('table'), tr, td;  
+//var table = document.createElement('table'), tr, td;
+var table = document.createElement('myrow'), td;  
+  
 for(i = 0; i < arr.length; i++) {
         //out += arr[i].match;
  // alert (arr[i].match);
-        tr = document.createElement('tr');
+        //tr = document.createElement('tr');
         td = document.createElement('td');
-        tr.appendChild(td);
+        //tr.appendChild(td);
         td.innerHTML = (arr[i].match);
-        table.appendChild(tr);
-   }
-document.getElementById('container').appendChild(table); 
+        //table.appendChild(tr);
+        myrow.appendChild(td);
+  }
+//document.getElementById('container').appendChild(table); 
+document.getElementById('contains').appendChild(myrow); 
 }
   
 </script>     
