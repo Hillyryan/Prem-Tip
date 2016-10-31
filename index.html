@@ -97,7 +97,14 @@ colgroup {
  <tr id="teams" colspan="3"></tr> 
 
 </table>
-  
+ 
+    <table class = "src">
+         <tr><th>Name</th><th>Country</th></tr>
+         <tr><td><div id = "Name">Sachin</div></td>
+         <td><div id = "Country">India</div></td></tr>
+      </table>    
+    
+    
  
 <script>
 
@@ -174,6 +181,9 @@ for(j = 0; j < arr2.length; j++) {
         myteam.appendChild(tr);
   } 
 document.getElementById('teams').appendChild(myteam); 
+    
+document.getElementById("Name").innerHTML = (arr2[j].match);
+document.getElementById("Country").innerHTML = (arr2[j].match);  
 }
   
 </script>     
