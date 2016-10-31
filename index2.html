@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+<title>R.D_Matchweek_1</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+<style>
+html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+.w3-sidenav a,.w3-sidenav h4 {font-weight:bold}
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+th {
+    background-color: grey;
+    color: white;    
+    border: 1px solid #dddddd;
+    padding: 6px;
+    text-align: center;
+    font-family: arial;
+    font-size: 18px;
+}
+tr:nth-child(2) { 
+    background-color: grey;    
+    color: white;
+    padding: 6px;
+    text-align: center;
+    font-family: arial;
+    font-size: 14px;
+}
+tr:nth-child(3) { 
+    background-color: #F7F7F7;    
+    color: #444444;
+    padding: 6px;
+    text-align: center;
+    font-family: arial rounded mt;
+    font-size: 14px;
+}
+td {
+    border: 1px solid #dddddd;
+    padding: 6px;
+    text-align: center;  
+}
+colgroup {
+    display: table-column-group; 
+  }
+</style>
+
+
+<body class="w3-light-grey w3-content" style="max-width:1600px">
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:50px">
+
+  <!-- Header -->
+  <header class="w3-container">
+    <a href="#"><img src="img/Rhino_Logo.png" style="width:65px;" class="w3-circle w3-right w3-margin w3-hide-large w3-hover-opacity"></a>
+    <span class="w3-opennav w3-hide-large w3-xxlarge w3-hover-text-grey" onclick="w3_open()"><i class="fa fa-bars"></i></span>
+    <h1><b>Rhinoceros Designs</b></h1>
+    <div class="w3-section w3-bottombar w3-padding-16">
+    </div>
+  </header>
+
+
+<div style="overflow-x:auto;">
+
+
+
+<table>
+
+<table style="width:100%">
+
+<caption id="demo"></caption>
+  <colgroup>
+   </colgroup>
+ 
+  <tr>
+    <th colspan="9">Fixtures</th>
+    <th id="players" colspan="2"></th>
+  </tr>
+  
+   <tr>  
+    <td colspan = "5">Match</td>
+    <td>Venue</td>
+    <td>Time</td>
+    <td colspan = "2">Results</td>
+    <script> 
+     //var row =1
+     //var col =8
+     //for (var c=0;c<col;c++) {
+     //document.write('<td>H</td><td>A</td>')  
+     //}
+    </script>
+ </tr>
+ 
+ <tr id="teams" colspan="5"></tr> 
+ <tr>
+ <td id = "match" colspan="5"></td>
+ <td id = "venue"></td>
+ <td id = "time"></td>
+ <td id = "date"></td>
+ </tr>
+    
+</table>
+ 
+<div id="container"></div>  
+
+<table id = "myTable"> 
+  <tr>
+    <td>Row1 cell1</td>
+    <td>Row1 cell2</td>
+  </tr>     
+</table>    
+    
+<script>
+
+
+///var xmlhttp = new XMLHttpRequest();
+//var url = "data/fixtures.txt";
+///var url = "data/players.txt";  
+//var url2 = "data/fixtures.txt";
+  
+///xmlhttp.onreadystatechange = function() {
+///   if (this.readyState == 4 && this.status == 200) {
+///        var myArr = JSON.parse(this.responseText);
+///   myFunction(myArr);
+  
+///    }
+///};
+///xmlhttp.open("GET", url, true);
+///xmlhttp.send();
+
+///function myFunction(arr) {
+///    var out = "";
+///var out1 = "";
+    //var i;
+///    var i= 0;
+///    var MW = "Matchweek1";
+
+//out1 += arr[0].match;
+  
+//// alert (arr[j].match);
+
+  //document.getElementById("id01").innerHTML = out;
+//document.getElementById("id02").innerHTML = out1;
+///document.getElementById("demo").innerHTML = MW;
+///}    
+
+//var table = document.createElement('table'), tr, td;
+///var myrow = document.createElement('myrow'), td;  
+//for(i = 0; i < arr.length; i++) {
+        //out += arr[i].match;
+ // alert (arr[i].match);
+//        tr = document.createElement('tr');
+//        td = document.createElement('td');
+//        tr.appendChild(td);
+//        td.innerHTML = (arr[i].match);
+//        table.appendChild(tr);
+///        myrow.appendChild(td);
+// }
+//document.getElementById('container').appendChild(table); 
+//document.getElementById('players').appendChild(myrow); 
+//}
+
+
+
+/////Load Matches////
+var xmlhttp = new XMLHttpRequest();
+var url2 = "data/fixtures.txt";
+  
+xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        var myArr2 = JSON.parse(this.responseText);
+        myFunction(myArr2);
+    }
+};  
+  
+xmlhttp.open("GET", url2, true); 
+xmlhttp.send();  
+  
+function myFunction(arr2) {
+var j= 0; 
+var myteam = document.createElement('myteam');    
+for(j = 0; j < arr2.length; j++) {
+        tr = document.createElement('tr');
+        tr.innerHTML = (arr2[j].match);         
+        myteam.appendChild(tr);
+
+//document.write('<td id = (arr2[j].match)></td>'); 
+//document.write('<td id = (arr2[j].venue)></td>'); 
+//document.write('<td id = (arr2[j].time)></td>'); 
+//document.write('<td id = (arr2[j].date)></td>'); 
+
+document.getElementById("match").innerHTML = (arr2[j].match);
+document.getElementById("venue").innerHTML = (arr2[j].venue); 
+document.getElementById("time").innerHTML = (arr2[j].time);  
+document.getElementById("date").innerHTML = (arr2[j].date); 
+
+
+} 
+
+document.getElementById('teams').appendChild(myteam); 
+
+    
+    
+var table = document.createElement('table'), tr, td;
+for(j = 0; j < arr2.length; j++) {
+        //out += arr[i].match;
+ // alert (arr[i].match);
+        tr = document.createElement('tr');
+        td = document.createElement('td');
+        tr.appendChild(td);
+        td.innerHTML = (arr2[j].match);
+        table.appendChild(tr);
+ }
+
+document.getElementById('container').appendChild(table);      
+    
+
+for(j = 0; j < arr2.length; j++) {
+    var table = document.getElementById("myTable");
+    var row = table.insertRow(0);
+    var cell1 = row.insertCell(0);
+    var cell2 = row.insertCell(1);
+    var cell3 = row.insertCell(2);
+    var cell4 = row.insertCell(3);
+    cell1.innerHTML = (arr2[j].match);
+    cell2.innerHTML = (arr2[j].venue);
+    cell3.innerHTML = (arr2[j].time);
+    cell4.innerHTML = (arr2[j].date);
+ }   
+    
+    
+    
+     
+}
+  
+</script>     
+
+
+        
+</body>
+</html>
