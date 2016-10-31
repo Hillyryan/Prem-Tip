@@ -38,7 +38,6 @@
 var xmlhttp = new XMLHttpRequest();
 //var url = "data/fixtures.txt";
 var url = "data/players.txt";  
-var url2 = "data/fixtures.txt";
   
 xmlhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
@@ -80,11 +79,21 @@ for(i = 0; i < arr.length; i++) {
 //document.getElementById('container').appendChild(table); 
 document.getElementById('players').appendChild(myrow); 
 }
+
+var xmlhttp2 = new XMLHttpRequest();
+var url2 = "data/fixtures.txt";
+  
+xmlhttp2.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        var myArr2 = JSON.parse(this.responseText);
+        myFunction2(myArr2);
+    }
+};  
   
 xmlhttp.open("GET", url2, true); 
 xmlhttp.send();  
   
-function myFunction(arr2) {
+function myFunction2(arr2) {
 var j= 0; 
 var myteam = document.createElement('myteam'), tr;    
 for(j = 0; j < arr2.length; j++) {
