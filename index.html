@@ -191,18 +191,16 @@ document.getElementById('teams').appendChild(myteam);
 
     
     
- var table = document.createElement('table'), tr, td;
-///var myrow = document.createElement('myrow'), td;  
-for(i = 0; i < arr.length; i++) {
+var table = document.createElement('table'), tr, td;
+for(j = 0; j < arr.length; j++) {
         //out += arr[i].match;
  // alert (arr[i].match);
         tr = document.createElement('tr');
         td = document.createElement('td');
         tr.appendChild(td);
-        td.innerHTML = (arr[i].match);
+        td.innerHTML = (arr[j].match);
         table.appendChild(tr);
-///        myrow.appendChild(td);
-  }
+ }
 document.getElementById('container').appendChild(table);    
     
     
