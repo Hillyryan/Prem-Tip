@@ -80,20 +80,20 @@ for(i = 0; i < arr.length; i++) {
 document.getElementById('players').appendChild(myrow); 
 }
 
-var xmlhttp2 = new XMLHttpRequest();
+var xmlhttp = new XMLHttpRequest();
 var url2 = "data/fixtures.txt";
   
-xmlhttp2.onreadystatechange = function() {
+xmlhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
         var myArr2 = JSON.parse(this.responseText);
-        myFunction2(myArr2);
+        myFunction(myArr2);
     }
 };  
   
 xmlhttp.open("GET", url2, true); 
 xmlhttp.send();  
   
-function myFunction2(arr2) {
+function myFunction(arr2) {
 var j= 0; 
 var myteam = document.createElement('myteam'), tr;    
 for(j = 0; j < arr2.length; j++) {
