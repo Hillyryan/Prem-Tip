@@ -111,10 +111,7 @@ for(j = 0; j < arr.length; j++) {
     var cell4 = row.insertCell(3);
     var x = document.createElement("INPUT");
     x.setAttribute("type", "text");
- 
-    document.body.appendChild(x);
-      
-    
+    row.appendChild(x);
     cell1.innerHTML = (arr[j].match);
     cell2.innerHTML = (arr[j].venue);
     cell3.innerHTML = (arr[j].time);
