@@ -105,7 +105,10 @@ colgroup {
 </table>
  
 <div id="container"></div>  
- 
+
+ <table id = mytable> 
+</table>    
+    
 <script>
 
 
@@ -210,6 +213,15 @@ for(j = 0; j < arr2.length; j++) {
 
 document.getElementById('container').appendChild(table);      
     
+
+for(j = 0; j < arr2.length; j++) {
+    var table = document.getElementById("myTable");
+    var row = table.insertRow(0);
+    var cell1 = row.insertCell(0);
+    var cell2 = row.insertCell(1);
+    cell1.innerHTML = (arr2[j].match);
+    cell2.innerHTML = (arr2[j].venue);
+ }   
     
     
     
@@ -217,8 +229,8 @@ document.getElementById('container').appendChild(table);
 }
   
 </script>     
-  
-  
+
+
         
 </body>
 </html>
