@@ -78,6 +78,7 @@ colgroup {
     <td colspan = "5">Match</td>
     <td>Venue</td>
     <td>Time</td>
+    <td>Date</td>
     <td colspan = "2">Results</td>
 </tr>
     
@@ -110,8 +111,11 @@ for(j = 0; j < arr.length; j++) {
     var cell3 = row.insertCell(2);
     var cell4 = row.insertCell(3);
     var x = document.createElement("INPUT");
-    x.setAttribute("type", "text");
+    var y = document.createElement("INPUT");
+    x.setAttribute("HResult", "text");
+    y.setAttribute("AResult", "text");
     row.appendChild(x);
+    row.appendChild(y);
     cell1.innerHTML = (arr[j].match);
     cell2.innerHTML = (arr[j].venue);
     cell3.innerHTML = (arr[j].time);
