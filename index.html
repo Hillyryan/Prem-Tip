@@ -177,7 +177,7 @@ var j= 0;
 var myteam = document.createElement('myteam'), tr;    
 for(j = 0; j < arr2.length; j++) {
         tr = document.createElement('tr');
-        tr.innerHTML = (arr2[j].match);
+        tr.innerHTML = (arr2[j].match);         
         myteam.appendChild(tr);
 
 document.getElementById("match").innerHTML = (arr2[j].match);
@@ -199,7 +199,6 @@ for(j = 0; j < arr2.length; j++) {
         td = document.createElement('td');
         tr.appendChild(td);
         td.innerHTML = (arr2[j].match);
-        td.innerHTML = (arr2[j].venue);
         table.appendChild(tr);
  }
 document.getElementById('container').appendChild(table);    
