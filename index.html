@@ -167,19 +167,10 @@ xmlhttp.send();
   
 function myFunction(arr2) {
 var j= 0; 
-var myteam = document.createElement('myteam'), tr, td, td, td;    
+var myteam = document.createElement('myteam'), tr;    
 for(j = 0; j < arr2.length; j++) {
         tr = document.createElement('tr');
-        td = document.createElement('td');
-        //tr.appendChild(td);
-        tr.appendChild(td);
-        td.innerHTML = (arr2[j].match);
-        tr.appendChild(td);
-        td.innerHTML = (arr2[j].venue);
-        tr.appendChild(td);
-        td.innerHTML = (arr2[j].time);
-        tr.appendChild(td);
-        td.innerHTML = (arr2[j].date);
+        tr.innerHTML = (arr2[j].match);
         myteam.appendChild(tr);
   } 
 document.getElementById('teams').appendChild(myteam); 
