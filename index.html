@@ -80,18 +80,11 @@ colgroup {
     <th id="players" colspan="2"></th>
   </tr>
   
-   <tr>  
+ <tr>  
     <td colspan = "5">Match</td>
     <td>Venue</td>
     <td>Time</td>
     <td colspan = "2">Results</td>
-    <script> 
-     //var row =1
-     //var col =8
-     //for (var c=0;c<col;c++) {
-     //document.write('<td>H</td><td>A</td>')  
-     //}
-    </script>
  </tr>
  
  <tr id="teams" colspan="5"></tr> 
@@ -103,9 +96,6 @@ colgroup {
  </tr>
     
 </table>
- 
-<div id="container"></div>  
-
 <table id = "myTable"> 
   <tr>
     <td>Row1 cell1</td>
@@ -114,54 +104,6 @@ colgroup {
 </table>    
     
 <script>
-
-
-///var xmlhttp = new XMLHttpRequest();
-//var url = "data/fixtures.txt";
-///var url = "data/players.txt";  
-//var url2 = "data/fixtures.txt";
-  
-///xmlhttp.onreadystatechange = function() {
-///   if (this.readyState == 4 && this.status == 200) {
-///        var myArr = JSON.parse(this.responseText);
-///   myFunction(myArr);
-  
-///    }
-///};
-///xmlhttp.open("GET", url, true);
-///xmlhttp.send();
-
-///function myFunction(arr) {
-///    var out = "";
-///var out1 = "";
-    //var i;
-///    var i= 0;
-///    var MW = "Matchweek1";
-
-//out1 += arr[0].match;
-  
-//// alert (arr[j].match);
-
-  //document.getElementById("id01").innerHTML = out;
-//document.getElementById("id02").innerHTML = out1;
-///document.getElementById("demo").innerHTML = MW;
-///}    
-
-//var table = document.createElement('table'), tr, td;
-///var myrow = document.createElement('myrow'), td;  
-//for(i = 0; i < arr.length; i++) {
-        //out += arr[i].match;
- // alert (arr[i].match);
-//        tr = document.createElement('tr');
-//        td = document.createElement('td');
-//        tr.appendChild(td);
-//        td.innerHTML = (arr[i].match);
-//        table.appendChild(tr);
-///        myrow.appendChild(td);
-// }
-//document.getElementById('container').appendChild(table); 
-//document.getElementById('players').appendChild(myrow); 
-//}
 
 
 
@@ -182,42 +124,7 @@ xmlhttp.send();
 function myFunction(arr2) {
 var j= 0; 
 var myteam = document.createElement('myteam');    
-for(j = 0; j < arr2.length; j++) {
-        tr = document.createElement('tr');
-        tr.innerHTML = (arr2[j].match);         
-        myteam.appendChild(tr);
-
-//document.write('<td id = (arr2[j].match)></td>'); 
-//document.write('<td id = (arr2[j].venue)></td>'); 
-//document.write('<td id = (arr2[j].time)></td>'); 
-//document.write('<td id = (arr2[j].date)></td>'); 
-
-document.getElementById("match").innerHTML = (arr2[j].match);
-document.getElementById("venue").innerHTML = (arr2[j].venue); 
-document.getElementById("time").innerHTML = (arr2[j].time);  
-document.getElementById("date").innerHTML = (arr2[j].date); 
-
-
-} 
-
-document.getElementById('teams').appendChild(myteam); 
-
-    
-    
-var table = document.createElement('table'), tr, td;
-for(j = 0; j < arr2.length; j++) {
-        //out += arr[i].match;
- // alert (arr[i].match);
-        tr = document.createElement('tr');
-        td = document.createElement('td');
-        tr.appendChild(td);
-        td.innerHTML = (arr2[j].match);
-        table.appendChild(tr);
- }
-
-document.getElementById('container').appendChild(table);      
-    
-
+ 
 for(j = 0; j < arr2.length; j++) {
     var table = document.getElementById("myTable");
     var row = table.insertRow(0);
