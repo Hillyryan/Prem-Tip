@@ -81,19 +81,19 @@ for(i = 0; i < arr.length; i++) {
 document.getElementById('players').appendChild(myrow); 
 }
   
-//xmlhttp.open("GET", url2, true); 
-//xmlhttp.send();  
+xmlhttp.open("GET", url2, true); 
+xmlhttp.send();  
   
-//function myFunction(arr) {
-//var j= 0; 
-//var myteam = document.createElement('myteam'), tr;    
-//for(j = 0; j < arr.length; j++) {
-//        tr = document.createElement('tr');
-//        tr.innerHTML = (arr[j].match);
-//        myteam.appendChild(tr);
-//  } 
-//document.getElementById('teams').appendChild(myteam); 
-//}
+function myFunction(arr2) {
+var j= 0; 
+var myteam = document.createElement('myteam'), tr;    
+for(j = 0; j < arr2.length; j++) {
+        tr = document.createElement('tr');
+        tr.innerHTML = (arr2[j].match);
+        myteam.appendChild(tr);
+  } 
+document.getElementById('teams').appendChild(myteam); 
+}
   
 </script>     
 
