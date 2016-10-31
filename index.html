@@ -85,11 +85,11 @@ xmlhttp.open("GET", url2, true);
 xmlhttp.send();  
   
 function myFunction(arr) {
-var i= 0; 
+var j= 0; 
 var myteam = document.createElement('myteam'), tr;    
-for(i = 0; i < arr.length; i++) {
+for(j = 0; j < arr.length; j++) {
         tr = document.createElement('tr');
-        tr.innerHTML = (arr[i].match);
+        tr.innerHTML = (arr[j].match);
         myteam.appendChild(tr);
   } 
 document.getElementById('teams').appendChild(myteam); 
