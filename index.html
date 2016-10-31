@@ -37,27 +37,27 @@
 <script>
 
 
-var xmlhttp = new XMLHttpRequest();
+///var xmlhttp = new XMLHttpRequest();
 //var url = "data/fixtures.txt";
-var url = "data/players.txt";  
+///var url = "data/players.txt";  
 //var url2 = "data/fixtures.txt";
   
-xmlhttp.onreadystatechange = function() {
-   if (this.readyState == 4 && this.status == 200) {
-        var myArr = JSON.parse(this.responseText);
-   myFunction(myArr);
+///xmlhttp.onreadystatechange = function() {
+///   if (this.readyState == 4 && this.status == 200) {
+///        var myArr = JSON.parse(this.responseText);
+///   myFunction(myArr);
   
-    }
-};
-xmlhttp.open("GET", url, true);
-xmlhttp.send();
+///    }
+///};
+///xmlhttp.open("GET", url, true);
+///xmlhttp.send();
 
-function myFunction(arr) {
-    var out = "";
-var out1 = "";
+///function myFunction(arr) {
+///    var out = "";
+///var out1 = "";
     //var i;
-    var i= 0;
-    var MW = "Matchweek1";
+///    var i= 0;
+///    var MW = "Matchweek1";
 
 //out1 += arr[0].match;
   
@@ -65,24 +65,24 @@ var out1 = "";
 
   //document.getElementById("id01").innerHTML = out;
 //document.getElementById("id02").innerHTML = out1;
-document.getElementById("demo").innerHTML = MW;
-}    
+///document.getElementById("demo").innerHTML = MW;
+///}    
 
 //var table = document.createElement('table'), tr, td;
-var myrow = document.createElement('myrow'), td;  
-for(i = 0; i < arr.length; i++) {
+///var myrow = document.createElement('myrow'), td;  
+///for(i = 0; i < arr.length; i++) {
         //out += arr[i].match;
  // alert (arr[i].match);
         //tr = document.createElement('tr');
-        td = document.createElement('td');
+///        td = document.createElement('td');
         //tr.appendChild(td);
-        td.innerHTML = (arr[i].name);
+///        td.innerHTML = (arr[i].name);
         //table.appendChild(tr);
-        myrow.appendChild(td);
-  }
+///        myrow.appendChild(td);
+///  }
 //document.getElementById('container').appendChild(table); 
-document.getElementById('players').appendChild(myrow); 
-}
+///document.getElementById('players').appendChild(myrow); 
+///}
 
 
 
