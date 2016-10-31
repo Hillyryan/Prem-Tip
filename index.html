@@ -171,6 +171,9 @@ var myteam = document.createElement('myteam'), tr;
 for(j = 0; j < arr2.length; j++) {
         tr = document.createElement('tr');
         tr.innerHTML = (arr2[j].match);
+        tr.innerHTML = (arr2[j].venue);
+        tr.innerHTML = (arr2[j].time);
+        tr.innerHTML = (arr2[j].date);
         myteam.appendChild(tr);
   } 
 document.getElementById('teams').appendChild(myteam); 
