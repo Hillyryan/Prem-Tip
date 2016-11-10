@@ -84,6 +84,44 @@ colgroup {
     
 </table>
 
+<div id="hidTable" style="display: none">
+    <table id="testTable">
+        <caption>Supplier Risk Analysis</caption>
+        <colgroup></colgroup>
+        <colgroup></colgroup>
+        <colgroup></colgroup>
+        <thead>
+        <tr>
+            <th>No.</th>
+            <th>Question</th>
+            <th>Score</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>Q1</td>
+            <td>Do you have the Quality Unit?</td>
+            <td id="htqf1">-</td>
+        </tr>
+        <tr>
+            <td>Q2</td>
+            <td>Apply PICS GMP?</td>
+            <td id="htqf2">-</td>
+        </tr>
+        <tr>
+            <td>Q3</td>
+            <td>Do you have a deviation or non-conformance procedure?</td>
+            <td id="htqf3">-</td>
+        </tr>
+        <tr>
+            <td>Q4</td>
+            <td>Do you have a customer complaint procedure?</td>
+            <td id="htqf4">-</td>
+        </tr>
+        </tbody>
+    </table>
+</div>    
+    
 <input type="button" onclick="fillHidTable()" value="Submit">    
     
 <!-- Pagination -->
@@ -114,7 +152,7 @@ xmlhttp.send();
   
 function myFunction(arr) {
 var j= 0; 
- 
+var r= 1; 
 for(j = 0; j < arr.length; j++) {
     var table = document.getElementById("myTable");
     var row = table.insertRow(-1);
@@ -124,6 +162,8 @@ for(j = 0; j < arr.length; j++) {
     var cell3 = row.insertCell(2);
     var cell4 = row.insertCell(3);
     var x = document.createElement("INPUT");
+    x.setAttribute("id","Q"+r+"CALC")
+    r = r+1
     var y = document.createElement("INPUT");
     x.setAttribute("HResult", "text");
     y.setAttribute("AResult", "text");
