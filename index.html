@@ -135,9 +135,20 @@ for(j = 0; j < arr.length; j++) {
 }
   
 </script>     
-
+<script> 
+    $(document).ready(function() {
+    $('#example').DataTable( {
+        dom: 'Bfrtip',
+        buttons: [
+            'copyHtml5',
+            'excelHtml5',
+            'csvHtml5',
+            'pdfHtml5'
+        ]
+    } );
+} );
     
-
+</script> 
         
 </body>
 </html>
