@@ -46,7 +46,7 @@ colgroup {
     display: table-column-group; 
   }
 </style>
-
+  
 
 <body class="w3-light-grey w3-content" style="max-width:1600px">
 
@@ -84,6 +84,8 @@ colgroup {
     
 </table>
 
+<input type="button" onclick="fillHidTable()" value="Submit">    
+    
 <!-- Pagination -->
  <div class="w3-center w3-padding-32">
    <ul class="w3-pagination">
@@ -135,20 +137,31 @@ for(j = 0; j < arr.length; j++) {
 }
   
 </script>     
-<script> 
-    $(document).ready(function() {
-    $('#example').DataTable( {
-        dom: 'Bfrtip',
-        buttons: [
-            'copyHtml5',
-            'excelHtml5',
-            'csvHtml5',
-            'pdfHtml5'
-        ]
-    } );
-} );
+
+<script type="text/javascript">
+function fillHidTable(){
+    var htqf; //-- hidden field
+    var rf; //-- retrieved field
+    for ( var i = 1; i < 5; i++ ) {
+        rf = "htqf"+i;
+        document.getElementById(rf).innerHTML = document.getElementById("Q"+i+"CALC").value;
+    }
+    tableToExcel('hidTable', 'Analysis Results');
+}
+
+var tableToExcel = (function() {
+    var uri = 'data:application/vnd.ms-excel;base64,'
+            , template = '<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:x="urn:schemas-microsoft-com:office:excel" xmlns="http://www.w3.org/TR/REC-html40"><head><!--[if gte mso 9]><xml><x:ExcelWorkbook><x:ExcelWorksheets><x:ExcelWorksheet><x:Name>{worksheet}</x:Name><x:WorksheetOptions><x:DisplayGridlines/></x:WorksheetOptions></x:ExcelWorksheet></x:ExcelWorksheets></x:ExcelWorkbook></xml><![endif]--></head><body><table>{table}</table></body></html>'
+            , base64 = function(s) { return window.btoa(unescape(encodeURIComponent(s))) }
+            , format = function(s, c) { return s.replace(/{(\w+)}/g, function(m, p) { return c[p]; }) }
+    return function(table, name) {
+        if (!table.nodeType) table = document.getElementById(table)
+        var ctx = {worksheet: name || 'Worksheet', table: table.innerHTML}
+        window.location.href = uri + base64(format(template, ctx))
+    }
+})()
+</script>
     
-</script> 
         
 </body>
 </html>
